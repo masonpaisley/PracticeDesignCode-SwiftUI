@@ -61,6 +61,8 @@
 		4ADB0FE6289591B3000F0FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB0FE4289591B3000F0FA7 /* Assets.xcassets */; };
 		4ADB0FE9289595E6000F0FA7 /* Contentful in Frameworks */ = {isa = PBXBuildFile; productRef = 4ADB0FE8289595E6000F0FA7 /* Contentful */; };
 		4ADB0FEC28959750000F0FA7 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4ADB0FEB28959750000F0FA7 /* SDWebImageSwiftUI */; };
+		4ADB0FEE2895A003000F0FA7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB0FED2895A003000F0FA7 /* README.md */; };
+		4ADB0FEF2895A003000F0FA7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB0FED2895A003000F0FA7 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,7 @@
 		4ADB0FB228959171000F0FA7 /* UpdateDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateDetail.swift; sourceTree = "<group>"; };
 		4ADB0FB328959171000F0FA7 /* UpdateStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
 		4ADB0FE4289591B3000F0FA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4ADB0FED2895A003000F0FA7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +156,7 @@
 		4A21D09E2895909600D429E4 = {
 			isa = PBXGroup;
 			children = (
+				4ADB0FED2895A003000F0FA7 /* README.md */,
 				4A21D0A32895909600D429E4 /* Shared */,
 				4A21D0B22895909700D429E4 /* macOS */,
 				4A21D0BB2895909700D429E4 /* Tests iOS */,
@@ -362,6 +366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ADB0FEE2895A003000F0FA7 /* README.md in Resources */,
 				4ADB0FE5289591B3000F0FA7 /* Assets.xcassets in Resources */,
 				4ADB0FBA28959171000F0FA7 /* Noto_Sans_SC in Resources */,
 			);
@@ -371,6 +376,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ADB0FEF2895A003000F0FA7 /* README.md in Resources */,
 				4ADB0FE6289591B3000F0FA7 /* Assets.xcassets in Resources */,
 				4ADB0FBB28959171000F0FA7 /* Noto_Sans_SC in Resources */,
 			);
