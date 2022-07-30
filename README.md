@@ -1,4 +1,4 @@
-# SwiftUI-DesignCode
+# PracticeDesignCode-SwiftUI
 
 - Aesthetically pleasing UI written by including most of the new SwiftUI tools
 - This entire app is written based off of Meng To's Design Code course on SwiftUI
@@ -12,5 +12,6 @@
 
 
 第三方库链接：
+
 https://gitee.com/masonpaisley/contentful.swift.git
 https://gitee.com/masonpaisley/SDWebImageSwiftUI.git
