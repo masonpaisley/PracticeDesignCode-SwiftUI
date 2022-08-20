@@ -54,7 +54,7 @@ struct BookList: View {
             //            rotationEffect(.zero, anchor: /*@START_MENU_TOKEN@*/.bottom/*@END_MENU_TOKEN@*/)
             //隐藏状态栏
             .statusBar(hidden: hideStatus ? true : false)
-            .animation(.default)
+            .animation(.default, value: hideStatus)
         }
     }
 }
@@ -124,6 +124,7 @@ struct BookView: View {
                 }
                 .padding(showBookContent ? 30 : 20)
                 .padding(.top, showBookContent ? 30 : 8)
+                
                 WebImage(url: books.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -158,7 +159,7 @@ struct BookView: View {
             .onTapGesture {
                 self.showBookContent = true
                 self.hideStatus = true
-                self.hideButton.hide = true
+//                self.hideButton.hide = true
                 // 教程里没有汉化，不知道啥意思，
                 if self.showBookContent {
                     self.activeIndex = self.index
@@ -171,11 +172,11 @@ struct BookView: View {
             if showBookContent {
                 BookDetail(books: books, showBookContent: $showBookContent, hideStatus: $hideStatus, activeIndex: $activeIndex)
                     .background(Color.white)
-                    .animation(nil)
+//                    .animation(nil)
             }
         }
         .scaleEffect(1 - self.activeBook.height/1000)
-        .animation(.spring(response: 0.4, dampingFraction: 0.7, blendDuration: 0))
+        .animation(.spring(response: 0.4, dampingFraction: 0.7, blendDuration: 0), value: activeBook)
         .ignoresSafeArea(.all)
     }
 }

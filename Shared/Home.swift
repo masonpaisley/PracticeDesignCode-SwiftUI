@@ -22,7 +22,7 @@ struct Home: View {
                 .offset(y: showMenu ? -420 : 0)
                 .rotation3DEffect(Angle(degrees: showMenu ? Double(viewState.height / 10) - 10 : 0), axis: (x: 10.0, y: 0, z: 0))
                 .scaleEffect(showMenu ? 0.9 : 1)
-                .animation(.spring(response: 0, dampingFraction: 0.6, blendDuration: 0))
+                .animation(.spring(response: 0, dampingFraction: 0.6, blendDuration: 0), value: showMenu)
                 .edgesIgnoringSafeArea(.all)
             
             // 显示下方注销视图，因为放在 HomeButton 的.sheet内会有白色背景，所以只能先放这了
@@ -30,7 +30,7 @@ struct Home: View {
                 .background(Color.black.opacity(0.01))
                 .offset(y : showMenu ? 0 : UIScreen.main.bounds.height)
                 .offset(y : viewState.height)
-                .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
+                .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0), value: showMenu)
                 .onTapGesture {
                     self.showMenu.toggle()
                 }
@@ -123,7 +123,7 @@ struct MenuVIew: View {
             .padding(.trailing, 80)
             .shadow(radius: 10)
             .rotation3DEffect(Angle(degrees: show ? 0 : 60), axis: (x: 0.0, y: 10.0, z: 0.0))
-            .animation(.easeIn)
+            .animation(.easeIn, value: show)
             .offset(x: show ? 0 : -UIScreen.main.bounds.width)
             .onTapGesture {
                 self.show.toggle()
@@ -228,7 +228,7 @@ struct HomeView: View {
                 )
                 .blur(radius: show ? 20 :0)
                 .scaleEffect(showProfile ? 0.95 : 1)
-                .animation(.default)
+                .animation(.default, value: showProfile)
             
             VStack {
                 HStack {
@@ -240,9 +240,9 @@ struct HomeView: View {
                     RingButton(show: $showUpdate)
                 }
                 .modifier(Shadow())
-                .animation(.default)
+                .animation(.default, value: showProfile)
                 .offset(y: showProfile ? 60 : 0)
-                .offset(y: hideButton.hide ? -120 : 0)
+//                .offset(y: hideButton.hide ? -120 : 0)
                 Spacer()
             }
             .padding(.top , 44)
@@ -272,7 +272,7 @@ struct HomeView: View {
                 .padding(.top , 44)
                 .offset(x: -20, y: 20)
                 .transition(.move(edge: .top))
-                .animation(.spring(response: 0.6, dampingFraction: 0.8, blendDuration: 0.5))
+                .animation(.spring(response: 0.6, dampingFraction: 0.8, blendDuration: 0.5), value: showContent)
             }
         }
     }

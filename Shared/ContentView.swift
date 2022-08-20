@@ -23,7 +23,7 @@ struct ContentView: View {
             //标题和头图
             TitleView()
                 .blur(radius: showCard ? 20 : 0)
-                .animation(.easeIn)
+                .animation(.easeIn, value: showCard)
             
             //第三张卡片
             CardView()
@@ -39,7 +39,7 @@ struct ContentView: View {
                     axis: (x: 10.0 , y: 10.0, z: 10.0)
                 )
                 .blendMode(.hardLight)
-                .animation(.easeInOut(duration: 0.7))
+                .animation(.easeInOut(duration: 0.7), value: showCard)
             
             //第二张卡片
             CardView()
@@ -55,7 +55,7 @@ struct ContentView: View {
                     axis: (x: 10.0 , y: 10.0, z: 10.0)
                 )
                 .blendMode(.hardLight)
-                .animation(.easeInOut(duration: 0.5))
+                .animation(.easeInOut(duration: 0.5), value: showCard)
             
             //第一张卡片
             CertificateView()
@@ -67,7 +67,7 @@ struct ContentView: View {
                     Angle(degrees: showCard ? 0 : 0),
                     axis: (x: 10.0 , y: 10.0, z: 10.0)
                 )
-                .animation(.spring(response: 0.55, dampingFraction: 0.825, blendDuration: 0))
+                .animation(.spring(response: 0.55, dampingFraction: 0.825, blendDuration: 0), value: showCard)
                 .onTapGesture {
                     self.showCard.toggle()
                 }
@@ -87,7 +87,7 @@ struct ContentView: View {
             CardButtonView(showCircle: $showCard)
                 .offset(y: showCard ? UIScreen.main.bounds.height-600 : UIScreen.main.bounds.height)
                 .offset(y: bottomState.height)
-                .animation(.timingCurve(0.2, 0.8, 0.2, 1 , duration : 0.8))
+                .animation(.timingCurve(0.2, 0.8, 0.2, 1 , duration : 0.8), value: showCard)
                 // 手势拖动效果，控制bottomState的数值来调整offset的位置
                 .gesture(
                     DragGesture().onChanged{ value in

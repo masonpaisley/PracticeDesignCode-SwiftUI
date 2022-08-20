@@ -19,7 +19,7 @@ struct BookDetail: View {
         ScrollView {
             VStack {
                 VStack {
-                    HStack(alignment: .top) {
+                    HStack(alignment: .bottom) {
                         // 标题和副标题
                         VStack(alignment: .leading, spacing: 8.0) {
                             Text(books.title)
@@ -42,7 +42,7 @@ struct BookDetail: View {
                             .onTapGesture {
                                 self.showBookContent = false
                                 self.hideStatus = false
-                                self.hideButton.hide = false
+//                                self.hideButton.hide = false
                                 self.activeIndex = -1
                             }
                     }
